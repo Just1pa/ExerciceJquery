@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Mini jeu final</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	$("#onOff").click(function(){
+	$(this).toggleClass("off");
+	if($("#onOff").hasClass("off")){
+		console.log("hey");
+	}
+});
+			animation();
+	function animation(){
+		ville();
+		avion();
+	}
+	function ville(){
+		$("#ville").animate({backgroundPosition:"-=2000px"},40000,"linear");
+		setTimeout("ville()",40000);
+	}
+	function avion(){
+		$("#avion").animate({left:"+=200px"},2000,"linear");
+		setTimeout("avion()",2000);
+	}	
+	
+});
+	
+	</script>
+</head>
+<body>
+	<div id="conteneur">
+		<div id="interface">
+			<div id="ville"></div>
+			<div id="helice"></div>
+			<div id="avion"></div>
+		</div>
+		<div id="dashboard">
+		<div id="demarrage">
+			<p>Démarrer/arrêter</p>
+			<div id="onOff"></div>
+		</div>
+		<div id="vitesse">
+			<p>Vitesse</p>
+			<div id="vitesse"></div>
+		</div>
+		<div id="instruction">
+			<p>Après avoir démarré, utilisez les flèches du clavier pour piloter l'avion</br> Sinon, vous pouvez activer/désactiver les commandes tactiles : afficher</p>
+		</div>
+		<div class="autointerdit">
+			
+		</div>
+	</div>
+</body>
+</html>
